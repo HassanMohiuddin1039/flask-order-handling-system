@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Action Logs{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <h2><i class="fas fa-history"></i> Action Logs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Order ID</th>
+                    <th>Performed By</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in logs %}
+                <tr>
+                    <td>
+                        {% if log.action_type == 'Created' %}
+                            <i class="fas fa-plus-circle text-success"></i>
+                        {% elif log.action_type == 'Edited' %}
+                            <i class="fas fa-edit text-primary"></i>
+                        {% elif log.action_type == 'Marked Delivered' %}
+                            <i class="fas fa-check-circle text-success"></i>
+                        {% elif log.action_type == 'Deleted' %}
+                            <i class="fas fa-trash-alt text-danger"></i>
+                        {% endif %}
+                        {{ log.action_type }}
+                    </td>
+                    <td>{{ log.order_id if log.order_id else 'N/A' }}</td>
+                    <td>{{ log.performed_by }}</td>
+                    <td class="timestamp">{{ log.timestamp }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <a href="{{ url_for('index') }}" class="btn btn-primary">
+            <i class="fas fa-arrow-left"></i> Back to Orders
+        </a>
+    </div>
+{% endblock %}

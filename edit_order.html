@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Order{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <h2><i class="fas fa-edit"></i> Edit Order</h2>
+        <form method="POST">
+            <input type="hidden" name="performed_by" value="Admin">
+            
+            <div class="form-group">
+                <label for="num_items"><i class="fas fa-cubes"></i> Number of Items</label>
+                <input type="number" id="num_items" name="num_items" value="{{ order.num_items }}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="delivery_date"><i class="fas fa-calendar-alt"></i> Delivery Date</label>
+                <input type="date" id="delivery_date" name="delivery_date" value="{{ order.delivery_date }}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="sender_name"><i class="fas fa-user"></i> Sender Name</label>
+                <input type="text" id="sender_name" name="sender_name" value="{{ order.sender_name }}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="recipient_name"><i class="fas fa-user-tag"></i> Recipient Name</label>
+                <input type="text" id="recipient_name" name="recipient_name" value="{{ order.recipient_name }}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="recipient_address"><i class="fas fa-map-marker-alt"></i> Recipient Address</label>
+                <textarea id="recipient_address" name="recipient_address" required>{{ order.recipient_address }}</textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i> Update Order
+            </button>
+            <a href="{{ url_for('index') }}" class="btn btn-danger">
+                <i class="fas fa-times"></i> Cancel
+            </a>
+        </form>
+    </div>
+{% endblock %}
