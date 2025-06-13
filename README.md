@@ -7,15 +7,15 @@ static/
 styles.css            # CSS styles for the application
 
 templates/
-base.html            # Base template with common layout
-orders.html          # Main orders listing page
-add_order.html       # Form to add new orders
-edit_order.html      # Form to edit existing orders
+base.html            # Base template with common layout, 
+orders.html          # Main orders listing page, 
+add_order.html       # Form to add new orders, 
+edit_order.html      # Form to edit existing orders, 
 logs.html            # Page displaying all action logs
 
-app.py                   # Main Flask application file
-requirements.txt          # Python dependencies
-README.md                # This documentation file
+app.py                   # Main Flask application file,  
+requirements.txt          # Python dependencies,   
+README.md                # This documentation file,   
 
 Approach
 Core Features Implementation
