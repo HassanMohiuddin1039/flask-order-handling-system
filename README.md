@@ -15,7 +15,7 @@ logs.html            # Page displaying all action logs
 
 app.py                   # Main Flask application file        
 requirements.txt          # Python dependencies        
-README.md                # This documentation file       
+README.md                # This documentation file  
 
 Approach
 Core Features Implementation
@@ -34,6 +34,7 @@ User Interface:
 Developed a clean, responsive interface with Bootstrap-inspired styling
 Added Font Awesome icons for better visual cues
 Implemented card-based layout for better content organization
+See images Order_Handling_System, Add_Order, Order_Information to check the attracting interface.
 
 Technical Decisions
 Storage:
